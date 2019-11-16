@@ -12,9 +12,9 @@ window.onload = function(){
 
     function sendTheMole(){
             mole.remove();
-           let randomNumWithGlobalScope = (Math.floor(Math.random() * 2000)) + 200;
+           let randomNumWithGlobalScope = (Math.floor(Math.random() * 2000));
 
-           if(randomNumWithGlobalScope > 1800){
+           if(randomNumWithGlobalScope > 1500 || randomNumWithGlobalScope < 250){
             setTimeout(sendTheMole, randomNumWithGlobalScope) 
                return;
            }
