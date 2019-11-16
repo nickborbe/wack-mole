@@ -28,7 +28,7 @@ window.onload = function(){
 
 
 
-    // sendTheMole();
+    sendTheMole();
 
 
     
