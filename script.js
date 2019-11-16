@@ -2,14 +2,22 @@ console.log('hello');
 
 window.onload = function(){
 
-
+ 
 
 
     let mole = document.createElement('div');
     mole.classList.add('mole');
 
+
+
     function sendTheMole(){
-        setInterval(()=>{
+            mole.remove();
+           let randomNumWithGlobalScope = (Math.floor(Math.random() * 2000)) + 200;
+
+           if(randomNumWithGlobalScope > 1800){
+            setTimeout(sendTheMole, randomNumWithGlobalScope) 
+               return;
+           }
             // right now the mole simply appears in a different box once every second
             // instead, let's make it so the mole sometimes stays for longer than a second
             // sometimes for less
@@ -20,8 +28,8 @@ window.onload = function(){
             let randomBox = boxes[Math.floor(Math.random() * boxes.length)];
             
             randomBox.append(mole);
-            
-        }, 1000)
+
+            setTimeout(sendTheMole, randomNumWithGlobalScope) 
     }
 
 
@@ -38,7 +46,9 @@ window.onload = function(){
 
 
 
-
+mole.onclick = function(){
+    alert('you clicked the mole')
+}
 
 
 
